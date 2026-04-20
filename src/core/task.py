@@ -1,3 +1,4 @@
+import dataclasses
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import List, Optional
@@ -15,8 +16,9 @@ class Task:
     updated_at: str = field(default_factory=lambda: datetime.now().isoformat())
 
     def to_dict(self):
-        return self.__dict__
+        return dataclasses.asdict(self)
 
     @classmethod
     def from_dict(cls, data):
-        return cls(**data)
+        fields = {f.name for f in dataclasses.fields(cls)}
+        return cls(**{k: v for k, v in data.items() if k in fields})
