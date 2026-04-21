@@ -15,7 +15,7 @@
         "title": "CRITICAL: Fix production bug",
         "description": "A urgent bug",
         "status": "completed",
-        "priority": 3,
+        "priority": 5,
         "deadline": null,
         "dependencies": [],
         "created_at": "2026-04-21T17:26:27.263732",
@@ -25,13 +25,37 @@
         "id": "e9ac1291",
         "title": "Deploy to production",
         "description": "",
-        "status": "pending",
-        "priority": 0,
+        "status": "completed",
+        "priority": 2,
         "deadline": null,
         "dependencies": [
             "2a5ba236"
         ],
         "created_at": "2026-04-21T17:26:52.174100",
-        "updated_at": "2026-04-21T17:27:10.347790"
+        "updated_at": "2026-04-22T01:18:50.847115"
+    },
+    "651fd36b": {
+        "id": "651fd36b",
+        "title": "Finalize Portfolio",
+        "description": "A high-level project goal",
+        "status": "pending",
+        "priority": 0,
+        "deadline": null,
+        "dependencies": [],
+        "created_at": "2026-04-22T01:16:31.285362",
+        "updated_at": "2026-04-22T01:16:31.287226"
+    },
+    "95df6487": {
+        "id": "95df6487",
+        "title": "Go Live",
+        "description": "",
+        "status": "pending",
+        "priority": 0,
+        "deadline": null,
+        "dependencies": [
+            "e9ac1291"
+        ],
+        "created_at": "2026-04-22T01:17:25.767454",
+        "updated_at": "2026-04-22T01:18:50.847182"
     }
 }
