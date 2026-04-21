@@ -30,6 +30,12 @@ class TaskManager:
                     break
             
             if is_blocked:
-                task.status = "blocked"
+                task.update_status("blocked")
             elif task.status == "blocked":
-                task.status = "pending"
+                task.update_status("pending")
+
+    def update_task_status(self, task_id: str, status: str):
+        task = self.get_task(task_id)
+        if task:
+            task.update_status(status)
+            self.refresh_statuses()

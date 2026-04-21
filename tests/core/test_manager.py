@@ -27,3 +27,14 @@ def test_dependency_unblocks_task():
     
     manager.refresh_statuses()
     assert manager.get_task("B").status == "pending"
+
+def test_delete_task():
+    manager = TaskManager()
+    task_a = Task(id="A", title="Task A", status="completed")
+    task_b = Task(id="B", title="Task B", dependencies=["A"], status="pending")
+    manager.add_task(task_a)
+    manager.add_task(task_b)
+    
+    manager.delete_task("A")
+    assert manager.get_task("A") is None
+    assert manager.get_task("B").status == "blocked"

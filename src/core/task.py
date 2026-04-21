@@ -22,3 +22,7 @@ class Task:
     def from_dict(cls, data):
         fields = {f.name for f in dataclasses.fields(cls)}
         return cls(**{k: v for k, v in data.items() if k in fields})
+
+    def update_status(self, new_status: str):
+        self.status = new_status
+        self.updated_at = datetime.now().isoformat()

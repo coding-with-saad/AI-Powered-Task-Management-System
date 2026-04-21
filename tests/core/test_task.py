@@ -13,3 +13,10 @@ def test_task_creation():
     assert task.status == "pending"
     assert task.priority == 0
     assert isinstance(task.created_at, str)
+
+def test_update_status():
+    task = Task(id="1", title="Test Task")
+    old_updated_at = task.updated_at
+    task.update_status("completed")
+    assert task.status == "completed"
+    assert task.updated_at != old_updated_at
